@@ -5,13 +5,13 @@
 ***
 
 ## Table of Contents
-* Technologies (#technologies)
-* Why? (#why)
-* Goal (#goal)
-* Instalation (#instalation)
-* Inspiration (#inspiration)
-* To Do Before Play (#to)
-* Main Quest (#main)
+* [Technologies](#technologies)
+* [Why?](#why)
+* [Goal](#goal)
+* [Instalation](#instalation)
+* [Inspiration](#inspiration)
+* [To Do Before Play](#to)
+* [Main Quest](#main)
 
 ***
 
@@ -35,8 +35,8 @@
 
 ***
 
-### Main Quest
+### To Do Before Play
 
 ***
 
-### To Do Before Play
+### Main Quest
