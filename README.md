@@ -10,6 +10,7 @@
 * Goal (#goal)
 * Instalation (#instalation)
 * Inspiration (#inspiration)
+* To Do Before Play (#to)
 * Main Quest (#main)
 
 ***
@@ -35,3 +36,7 @@
 ***
 
 ### Main Quest
+
+***
+
+### To Do Before Play
