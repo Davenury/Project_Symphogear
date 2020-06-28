@@ -14,7 +14,7 @@
 * [Inspiration](#inspiration)
 * [To Do Before Play](#to-do-before-play)
 * [Main Quest](#main-quest)
-* [How To Help?](#how-to-help-?)
+* [How To Help?](#how-to-help)
 
 ***
 
