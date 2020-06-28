@@ -6,6 +6,7 @@
 
 ## Table of Contents
 * [Technologies](#technologies)
+* [Source Files](#source-files)
 * [Why?](#why)
 * [Goal](#goal)
 * [Instalation](#instalation)
@@ -16,6 +17,15 @@
 ***
 
 ### Technologies
+
+Technologies used in this "little" project:
+* Python
+* Pygame
+* Unit tests library for Python (just for tests)
+
+***
+
+### Source Files
 
 ***
 
