@@ -52,7 +52,7 @@ My goal is simple: write a good game with some good story line. To write it for 
 ***
 
 ### Instalation
-Before you start installation of this game, be sure, that you have installed Python (most preferably version 3). Don't know how? Check out this page ![Install Python](https://realpython.com/installing-python/)
+Before you start installation of this game, be sure, that you have installed Python (most preferably version 3). Don't know how? Check out this page [Install Python](https://realpython.com/installing-python/)
 
 To install this game (I wouldn't recommand it now, because it only has some unrelated lines of code right now), download this reopsitory (see the image below, if you don't know how).
 ![Download Repository](https://github.com/Davenury/Project_Symphogear/blob/master/markdown_images/Download_Repository.png)
