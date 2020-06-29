@@ -9,7 +9,7 @@ class Character:
         self.name = name
 
     def speak(self, text: str):
-        print(text) # domyślnie mówienie na ekranie Pygame
+        print(text)     # domyślnie mówienie na ekranie Pygame
 
     def get_name(self) -> str:
         return self.name
