@@ -20,6 +20,7 @@ class Player(Character):
         super().__init__(pos_x, pos_y, name)
         self.color = color
         self.songs = SongList()
+        self.sounds = SongList()
 
     def move_to(self, pos_x, pos_y):
         self.pos_x = pos_x

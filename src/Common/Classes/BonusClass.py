@@ -4,7 +4,7 @@ class WrongBonusException(Exception):
 
 
 class Bonus:
-    def __init__(self, upper: int = 1, lower: int = 0):
+    def __init__(self, upper: int = 1, lower: int = -1):
         self.upper = upper
         self.lower = lower
         self.value = 0

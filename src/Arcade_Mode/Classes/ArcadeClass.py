@@ -1,0 +1,2 @@
+class Arcade:
+    pass
