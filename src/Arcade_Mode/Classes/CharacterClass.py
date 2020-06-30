@@ -103,21 +103,25 @@ class ArcadePlayer(Player, Attacker):
 
 
 class ArcadeOpponent(Character, Attacker):
+    normal_image = ""
+    enervate_image = ""
+    stunned_image = ""
+
     def __init__(self, pos_x: int, pos_y: int, name: str):
         super().__init__(pos_x, pos_y, name)
 
     def set_normal_image(self):
-        pygame_loader.pygame_image_loader(r"{0}\src\images\villain\{1}.png"
+        self.normal_image = pygame_loader.pygame_image_loader(r"{0}\src\images\villain\{1}.png"
                                           .format(f"{constants.path_of_directory}",
                                           f"{self.name.lower()}"))
 
     def set_enervate_image(self):
-        pygame_loader.pygame_image_loader(r"{0}\src\images\villain\{1}.png"
+        self.enervate_image = pygame_loader.pygame_image_loader(r"{0}\src\images\villain\{1}.png"
                                           .format(f"{constants.path_of_directory}",
                                                   f"{self.name.lower()}_enervate"))
 
     def set_stunned_image(self):
-        pygame_loader.pygame_image_loader(r"{0}\src\images\villain\{1}.png"
+        self.stunned_image = pygame_loader.pygame_image_loader(r"{0}\src\images\villain\{1}.png"
                                           .format(f"{constants.path_of_directory}",
                                                   f"{self.name.lower()}_stunned"))
 

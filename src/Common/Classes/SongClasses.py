@@ -15,10 +15,13 @@ class Song:
         self.file = path_of_directory + '\src\music\\' + file
         self.in_use = in_use
         self.cover_file = cover_file
-        self.sound = PygameLoader.pygame_make_sound(self.file)
 
     def play(self):
-        self.sound.play()
+        PygameLoader.pygame_play_music_once(self.file)
+
+    #plays song n times, where -1 means infinitely
+    def play_n_times(self, n: int):
+        PygameLoader.pygame_play_music_n_times(self.file, n)
 
     @staticmethod
     def pause():
@@ -28,17 +31,13 @@ class Song:
     def un_pause():
         PygameLoader.pygame_unpause_music()
 
-    def stop(self):
-        self.sound.stop()
+    @staticmethod
+    def stop():
+        PygameLoader.pygame_stop_music()
 
-    def set_volume(self, volume: float):
-        self.sound.set_volume(volume)
-
-    def get_volume(self):
-        return self.sound.get_volume()
-
-    def fade_out(self, duration: int = 2):  # duration is in miliseconds
-        self.sound.fadeout(duration*1000)
+    @staticmethod
+    def fade_out(duration: int = 2):  # duration is in miliseconds
+        PygameLoader.pygame_music_fadeout(duration * 1000)
 
     @staticmethod
     def is_playing():
@@ -53,8 +52,10 @@ class Song:
     def is_in_use(self) -> bool:
         return self.in_use
 
-    def get_cover_file(self) -> str:
-        return self.cover_file
+    def get_cover(self):
+        return PygameLoader.pygame_image_loader(r"{0}\src\images\albums\{1}.png"
+                                                .format(f"{path_of_directory}",
+                                                        f"{self.cover_file}"))
 
 
 class SongList:
@@ -68,7 +69,7 @@ class SongList:
         self.quantity += 1
 
     def delete_song(self, title: str):
-        song = Song(title, "", False)
+        song = Song(title, "", False, "none")
         try:
             self.list.remove(song)
             self.quantity -= 1
@@ -93,13 +94,24 @@ class SongList:
         self.index = (self.index - 1) % self.quantity
         return self.list[self.index]
 
+    def play_this_song(self):
+        if self.quantity == 0:
+            raise NoSongException("No song in list")
+        self.list[self.index].play()
+
+    def play_this_song_n_times(self, n: int):
+        if self.quantity == 0:
+            raise NoSongException("No song in list")
+        self.list[self.index].play_n_times(n)
+
 
 def make_song_list(songs):
     song_list = SongList()
     for song in songs:
+        song = make_song(song[0], song[1], song[2], song[3])
         song_list.add_song(song)
     return song_list
 
 
-def make_song(title: str, file: str, in_use: bool):
-    return Song(title, file, in_use)
+def make_song(title: str, file: str, in_use: bool, cover_file: str):
+    return Song(title, file, in_use, cover_file)

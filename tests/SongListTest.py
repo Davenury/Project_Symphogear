@@ -65,6 +65,21 @@ class SongListTest(unittest.TestCase):
         # then
         self.assertEquals("title1", tried_song.get_title())
 
+    def remove_song_from_list_test(self):
+        # given
+        song = Song("title1", "file1", False, "none")
+        song2 = Song("title2", "file2", True, "none")
+        song_list = SongList()
+        song_list.add_song(song)
+        song_list.add_song(song2)
+
+        # when
+        song_list.delete_song("title1")
+        song_list.delete_song("title2")
+
+        # then
+        self.assertEquals(song_list.quantity, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

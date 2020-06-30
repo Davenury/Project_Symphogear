@@ -1,5 +1,4 @@
 import sys
-from time import sleep
 
 sys.path.append('..')
 
@@ -20,6 +19,3 @@ def draw():
     screen.blit(background, (0, 0))
     song.play()
     song.fade_out(10)
-    while song.is_playing():
-        print(song.get_volume())
-        sleep(1)
