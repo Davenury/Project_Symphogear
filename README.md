@@ -49,16 +49,16 @@ then you have Python and you don't have to install it.
 
 Don't know how to install it? Check out this page [Install Python](https://realpython.com/installing-python/)
 
-#### Instalation for these ones, who don't know how to git
+### Instalation for these ones, who don't know how to git
 To install this game, download this reopsitory (see the image below, if you don't know how).
 ![Download Repository](https://github.com/Davenury/Project_Symphogear/blob/master/markdown_images/Download_Repository.png)
 
 Then you need to extract it (I think that's obvious enough) and go to the Next Step in Instalation. I would also highly recommend you to learn the basics of git (init, clone, pull), because it will be easier for you in the future.
 
-#### Instalation for these ones, who know how to git
+### Instalation for these ones, who know how to git
 Then I think you know what you should do. Create the folder in which you want to have this game. Then make `git init` to initialize empty repository. Add connection to remote repository (at least that's how I understand this) by typing `git remote add origin https://github.com/Davenury/Project_Symphogear.git`. If this doesn't work, you'll have to use SSH protocole. Then, when you'll have everything ready, go to Next Step in Instalation.
 
-#### Next step in instalation
+### Next step in instalation
 
 Go to your command line (at this moment this game is testes on Windows, so I don't really know, how it will behave on Linux, etc.), change your directory (with `cd` command) to **Project_Sympohgear**. With `dir` command make sure, that there is a `requirements.txt` file. If there is (becuase there should be one), type:
 
