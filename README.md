@@ -72,7 +72,19 @@ And that should be it. Game is installed and ready to use (well, now it isn't, b
 
 ## What is ready for now?
 
+### Music Player
+
 As for this day (01.07.2020) only one thing is ready and it's Music Player (version 1.0.0) with all of the songs of anime series. If you want to know how to use it, check out [Documentation](https://docs.google.com/document/d/1f7OIKPJsSe8bc_GtXJyFHeuxhh2EukJjlxCXOtYWbbM/edit?usp=sharing). (Well, for now, there isn't much about it, but there will be ^^).
+#### How to start it?
+Go to **Project_Symphogear** folder, then go to **Ready_Products** folder (`cd Ready_Products`). Then type `pgzrun MusicPlayer.py` and it will start!
+
+As for now:
+* right arrow plays next song
+* left arrow plays previous song
+* space pauses / unpauses a song
+* e stops a song
+* p plays the song (either from a beginning or plays it one more time)
+If you want to change a song, you have to do it manually!
 
 ***
 
