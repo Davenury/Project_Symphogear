@@ -28,7 +28,7 @@ class Song:
         PygameLoader.pygame_pause_music()
 
     @staticmethod
-    def un_pause():
+    def unpause():
         PygameLoader.pygame_unpause_music()
 
     @staticmethod

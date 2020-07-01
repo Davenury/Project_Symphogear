@@ -21,20 +21,20 @@ class PygameLoader:
 
     @staticmethod
     def pygame_pause_music():
-        pygame.mixer.pause()
+        pygame.mixer.music.pause()
 
     @staticmethod
     def pygame_unpause_music():
-        pygame.mixer.unpause()
+        pygame.mixer.music.unpause()
 
     @staticmethod
     def mixer_pygame_is_playing() -> bool:
-        return pygame.mixer.get_busy()
+        return pygame.mixer.music.get_busy()
 
     @staticmethod
     def pygame_stop_music():
-        pygame.mixer.stop()
+        pygame.mixer.music.stop()
 
     @staticmethod
     def pygame_music_fadeout(duration: int):
-        pygame.mixer.fadeout(duration)
+        pygame.mixer.music.fadeout(duration)
