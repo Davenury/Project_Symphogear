@@ -7,7 +7,7 @@ from src.Common.Classes.Exceptions import WrongKeyException, ChangedSongExceptio
 from src.Common.Classes.MusicPlayer import MusicPlayer
 import pygame
 
-from src.Common.Classes.SongClasses import Song
+from src.Common.Classes.SongClasses import Song, NoSongException
 from src.Common.Classes.TextDisplayer import TextDisplayer
 
 WIDTH = constants.cover_width
@@ -24,7 +24,8 @@ def make_screen(current_song: Song):
     screen.blit(current_song.get_cover(), (0, constants.place_for_text_height))
     text = text_displayer.make_text_surface(Color(0, 128, 255),
                                             current_song.get_title())
-    text_rect = text.get_rect(center=(WIDTH / 2, (constants.place_for_text_height - text_displayer.font_size) / 2 + 10))
+    text_rect = text.get_rect(center=(WIDTH / 2, (constants.place_for_text_height -
+                                                  text_displayer.font_size) / 2 + 10))
     screen.blit(text, text_rect)
     pygame.display.flip()
 
@@ -41,6 +42,15 @@ def parse_events(event):
         elif event.key == pygame.K_LEFT:
             song = music_player.play_previous_song()
             raise ChangedSongException()
+        elif event.key == pygame.K_SPACE:
+            music_player.change_paused_status()
+            return song
+        elif event.key == pygame.K_p:
+            song = music_player.play()
+            return song
+        elif event.key == pygame.K_e:
+            music_player.stop()
+            raise NoSongException()
         else:
             raise WrongKeyException()
     else:
@@ -60,3 +70,5 @@ def draw():
                 print("User pressed wrong key!")
             except ChangedSongException:
                 music_player.play_song_infinitely()
+            except NoSongException:
+                song = Song("No song chosen", "None", False, "no_song_cover")
