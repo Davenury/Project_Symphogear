@@ -60,9 +60,9 @@ def parse_events(event):
 def draw():
     global song
     song = music_player.play_song_infinitely()
+    make_screen(song)
 
     while True:
-        make_screen(song)
         for event in pygame.event.get():
             try:
                 song = parse_events(event)
@@ -70,5 +70,6 @@ def draw():
                 print("User pressed wrong key!")
             except ChangedSongException:
                 music_player.play_song_infinitely()
+                make_screen(song)
             except NoSongException:
                 song = Song("No song chosen", "None", False, "no_song_cover")
