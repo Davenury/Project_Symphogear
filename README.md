@@ -5,6 +5,7 @@
 ***
 
 ## Table of Contents
+* [Latest changes](latest-changes)
 * [Contributors](#contributors)
 * [Technologies](#technologies)
 * [Instalation](#instalation)
@@ -16,6 +17,13 @@
 * [To Do Before Play](#to-do-before-play)
 * [Main Quest](#main-quest)
 * [How To Help?](#how-to-help)
+
+***
+
+## Latest Changes
+Below I'll put a list with all major updates that have been uploaded to this repo with dates:
+ * (08.07.2020):
+   * Music Player runs and it's awesome! (if I could say that)
 
 ***
 
