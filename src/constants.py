@@ -19,6 +19,7 @@ HP = 5000
 
 
 # playlists constants
+# format = [title, name of file with song, is used, name of file with cover]
 
 hibiki_songs = [
                 ["Gekishou Gungnir", "gekishou_gungnir.oga", False, "gekishou_gungnir"],
@@ -44,7 +45,8 @@ hibiki_songs = [
                 ["Rikka Ryouran", "rikka.ogg", False, "rikka"],
                 ["PERFECT SYMPHONY", "perfect_symphony.ogg", False, "perfect_symphony"],
                 ["Xtreme Vibes", "xtreme_vibes.ogg", False, "perfect_symphony"],
-                ["Ashita e no Fugel", "ashita.ogg", False, "ashita"]
+                ["Ashita e no Fugel", "ashita.ogg", False, "ashita"],
+                ["Koso Gungnir", "koso_gungnir.ogg", False, "xdu"]
 ]
 
 tsubasa_songs = [
@@ -71,7 +73,8 @@ tsubasa_songs = [
                 ["Rikka Ryouran", "rikka.ogg", False, "rikka"],
                 ["PERFECT SYMPHONY", "perfect_symphony.ogg", False, "perfect_symphony"],
                 ["Xtreme Vibes", "xtreme_vibes.ogg", False, "perfect_symphony"],
-                ["Ashita e no Fugel", "ashita.ogg", False, "ashita"]
+                ["Ashita e no Fugel", "ashita.ogg", False, "ashita"],
+                ["Sakimori no Uta", "sakimori_no_uta.ogg", False, "xdu"]
 ]
 
 chris_songs = [
@@ -117,7 +120,8 @@ maria_songs = [
                 ["Rikka Ryouran", "rikka.ogg", False, "rikka"],
                 ["PERFECT SYMPHONY", "perfect_symphony.ogg", False, "perfect_symphony"],
                 ["Xtreme Vibes", "xtreme_vibes.ogg", False, "perfect_symphony"],
-                ["Ashita e no Fugel", "ashita.ogg", False, "ashita"]
+                ["Ashita e no Fugel", "ashita.ogg", False, "ashita"],
+                ["Koso Gungnir", "koso_gungnir.ogg", False, "xdu"]
 ]
 
 shirabe_songs = [
@@ -299,4 +303,7 @@ all_songs = [
             ["Seiten Galaxy Cross", "galaxy_cross.oga", False, "galaxy_cross"],
             ["Ressou Gungnir", "resso.oga", False, "resso"],
             ["Dark Oblivion", "dark.oga", False, "resso"],
+            ["Koso Gungnir", "koso_gungnir.ogg", False, "xdu"],
+            ["Sakimori no Uta", "sakimori_no_uta.ogg", False, "xdu"],
+            ["More than friends, less than heroes", "more_than_friends_less_than_heroes.mp3", False, "xdu"]
 ]
