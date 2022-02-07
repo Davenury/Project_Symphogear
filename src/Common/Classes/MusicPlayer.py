@@ -1,4 +1,7 @@
-from src.Common.Classes.SongClasses import Song, SongList, make_song_list
+import pygame
+
+from src.Common.Classes.Exceptions import WrongKeyException, ChangedSongException
+from src.Common.Classes.SongClasses import Song, SongList, make_song_list, NoSongException
 
 
 class MusicPlayer:
@@ -37,3 +40,43 @@ class MusicPlayer:
 
     def stop(self):
         self.song_list.list[self.song_list.index].stop()
+
+    def parse_events(self, event, song: Song):
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                song = self.play_next_song()
+                raise ChangedSongException(song)
+            elif event.key == pygame.K_LEFT:
+                song = self.play_previous_song()
+                raise ChangedSongException(song)
+            elif event.key == pygame.K_SPACE:
+                self.change_paused_status()
+                return song
+            elif event.key == pygame.K_p:
+                song = self.play()
+                return song
+            elif event.key == pygame.K_e:
+                self.stop()
+                raise NoSongException()
+            else:
+                raise WrongKeyException()
+        else:
+            return song
+
+    def start(self, make_screen):
+        song = self.play_song_infinitely()
+        make_screen(song)
+        while True:
+            for event in pygame.event.get():
+                try:
+                    song = self.parse_events(event, song)
+                except WrongKeyException:
+                    print("User pressed wrong key!")
+                except ChangedSongException as e:
+                    self.play_song_infinitely()
+                    make_screen(e.get_song())
+                except NoSongException:
+                    song = Song("No song chosen", "None", False, "no_song_cover")

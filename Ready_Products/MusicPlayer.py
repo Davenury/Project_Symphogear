@@ -16,8 +16,6 @@ HEIGHT = constants.cover_height + constants.place_for_text_height
 music_player = MusicPlayer(constants.all_songs)
 text_displayer = TextDisplayer()
 
-song = ""
-
 
 def make_screen(current_song: Song):
     screen.fill((0, 0, 0))
@@ -30,46 +28,6 @@ def make_screen(current_song: Song):
     pygame.display.flip()
 
 
-def parse_events(event):
-    global song
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        exit()
-    elif event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_RIGHT:
-            song = music_player.play_next_song()
-            raise ChangedSongException()
-        elif event.key == pygame.K_LEFT:
-            song = music_player.play_previous_song()
-            raise ChangedSongException()
-        elif event.key == pygame.K_SPACE:
-            music_player.change_paused_status()
-            return song
-        elif event.key == pygame.K_p:
-            song = music_player.play()
-            return song
-        elif event.key == pygame.K_e:
-            music_player.stop()
-            raise NoSongException()
-        else:
-            raise WrongKeyException()
-    else:
-        return song
-
-
 def draw():
-    global song
-    song = music_player.play_song_infinitely()
-    make_screen(song)
+    music_player.start(make_screen)
 
-    while True:
-        for event in pygame.event.get():
-            try:
-                song = parse_events(event)
-            except WrongKeyException:
-                print("User pressed wrong key!")
-            except ChangedSongException:
-                music_player.play_song_infinitely()
-                make_screen(song)
-            except NoSongException:
-                song = Song("No song chosen", "None", False, "no_song_cover")

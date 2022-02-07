@@ -1,4 +1,5 @@
 import tkinter
+import csv
 root = tkinter.Tk()
 
 path_of_directory = "D:\\Project_Symphogear"
@@ -307,3 +308,10 @@ all_songs = [
             ["Sakimori no Uta", "sakimori_no_uta.ogg", False, "xdu"],
             ["More than friends, less than heroes", "more_than_friends_less_than_heroes.mp3", False, "xdu"]
 ]
+
+def write_to_csv():
+    with open('songs.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['title', 'name of file with song', 'name of file with cover'])
+        for line in all_songs:
+            writer.writerow([line[i] for i in [0, 1, -1]])
